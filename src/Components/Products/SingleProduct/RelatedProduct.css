@@ -1,0 +1,24 @@
+.related-products {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.related-products .related-products-heading {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 20px;
+}
+.related-products .related-products-heading::after {
+  width: 50px;
+  background-color: #8e2de2;
+  display: block;
+  height: 3px;
+  content: "";
+  margin-top: 3px;
+}
+.related-products .products-strip {
+  display: flex;
+  gap: 10px;
+  flex-flow: wrap;
+  width: 100%;
+}/*# sourceMappingURL=RelatedProduct.css.map */

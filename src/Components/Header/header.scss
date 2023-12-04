@@ -1,0 +1,97 @@
+@import "../../css-config/mixins.scss";
+.main-header {
+    width: 100%;
+    padding: 0 20px;
+    background-color: #212121;
+    color: white;
+    z-index: 99;
+    border-bottom: 1px solid black;
+    @include md {
+        padding: 0 40px;
+    }
+    .header-content {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1200px;
+        @include md {
+            height: 80px;
+        }
+        .left {
+            text-decoration: none;
+            list-style: none;
+            display: none;
+            gap: 25px;
+            @include md {
+                display: inline-flex;
+            }
+            li {
+                margin-right: 14px;
+                cursor: pointer;
+                font-size: 14px;
+                &:hover {
+                    color: #8e2de2;
+                }
+            }
+        }
+        .title {
+            font-size: 22px;
+            cursor: pointer;
+            font-weight: 700;
+            @include md {
+                font-size: 38px;
+                font-weight: 400;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            @include md {
+                gap: 25px;
+            }
+            svg {
+                font-size: 20px;
+                cursor: pointer;
+                font-weight: 600;
+                @include md {
+                    font-size: 24px;
+                }
+            }
+            .cart-icon {
+                position: relative;
+                span {
+                    background-color: #8e2de2;
+                    border-radius: 10px;
+                    min-width: 20px;
+                    text-align: center;
+                    padding: 2.5px;
+                    top: -6px;
+                    font-size: 12px;
+                    right: -12px;
+                    line-height: 1;
+                    position: absolute;
+                }
+            }
+        }
+    }
+    &.sticky-header {
+        position: sticky;
+        top: 0;
+        transform: translateY(-80px);
+        animation: stickyHeader 0.3s ease forwards;
+    }
+    @keyframes stickyHeader {
+        0% {
+            transform: translateY(-80px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}

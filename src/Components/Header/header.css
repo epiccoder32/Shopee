@@ -1,0 +1,108 @@
+.main-header {
+  width: 100%;
+  padding: 0 20px;
+  background-color: #212121;
+  color: white;
+  z-index: 99;
+  border-bottom: 1px solid black;
+}
+@media only screen and (min-width: 768px) {
+  .main-header {
+    padding: 0 40px;
+  }
+}
+.main-header .header-content {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+@media only screen and (min-width: 768px) {
+  .main-header .header-content {
+    height: 80px;
+  }
+}
+.main-header .header-content .left {
+  text-decoration: none;
+  list-style: none;
+  display: none;
+  gap: 25px;
+}
+@media only screen and (min-width: 768px) {
+  .main-header .header-content .left {
+    display: inline-flex;
+  }
+}
+.main-header .header-content .left li {
+  margin-right: 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.main-header .header-content .left li:hover {
+  color: #8e2de2;
+}
+.main-header .header-content .title {
+  font-size: 22px;
+  cursor: pointer;
+  font-weight: 700;
+}
+@media only screen and (min-width: 768px) {
+  .main-header .header-content .title {
+    font-size: 38px;
+    font-weight: 400;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.main-header .header-content .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .main-header .header-content .right {
+    gap: 25px;
+  }
+}
+.main-header .header-content .right svg {
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+@media only screen and (min-width: 768px) {
+  .main-header .header-content .right svg {
+    font-size: 24px;
+  }
+}
+.main-header .header-content .right .cart-icon {
+  position: relative;
+}
+.main-header .header-content .right .cart-icon span {
+  background-color: #8e2de2;
+  border-radius: 10px;
+  min-width: 20px;
+  text-align: center;
+  padding: 2.5px;
+  top: -6px;
+  font-size: 12px;
+  right: -12px;
+  line-height: 1;
+  position: absolute;
+}
+.main-header.sticky-header {
+  position: sticky;
+  top: 0;
+  transform: translateY(-80px);
+  animation: stickyHeader 0.3s ease forwards;
+}
+@keyframes stickyHeader {
+  0% {
+    transform: translateY(-80px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,40 @@
+@import '../../css-config/mixins.scss';
+.category-page {
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: calc(100% - 20px);
+    padding: 25px 0;
+    @include lg {
+        max-width: 1200px;
+    }
+    .category-cotent {
+        .category-name {
+            font-size: 19px;
+            font-weight: 500;
+            padding: 15px 0;
+            text-transform: uppercase;
+            @include lg {
+                font-size: 29px;
+            }
+            &::after {
+                content: "";
+                background-color: #8e2de2;
+                display: block;
+                height: 3px;
+                width: 50px;
+                margin-top: 3px;
+                @include lg {
+                    margin-top: 8px;
+                }
+            }
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            @include lg {
+                gap: 20px
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.categories-strip {
+  margin: 10px 0px;
+  display: flex;
+  flex-flow: wrap;
+  gap: 5px;
+}
+@media only screen and (min-width: 1024px) {
+  .categories-strip {
+    margin: 50px 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .categories-strip {
+    flex-direction: row;
+    max-width: 1200px;
+    gap: 10px;
+  }
+}
+.categories-strip .category {
+  width: calc(50% - 5px);
+  background-color: black;
+  overflow: hidden;
+  cursor: pointer;
+}
+@media only screen and (min-width: 1024px) {
+  .categories-strip .category {
+    width: calc(25% - 10px);
+  }
+}
+.categories-strip .category img {
+  width: 100%;
+  display: block;
+  transition: all ease 0.3s;
+}
+.categories-strip .category img:hover {
+  transform: scale(1.2);
+}/*# sourceMappingURL=Category.css.map */
