@@ -7,13 +7,18 @@ import useFetch from '../../../hooks/useFetch';
 
 export default function Search() {
     const[query,changeQuery]=useState('');
-    const {SetSearchOn}=useContextProvider();
+    const {SetSearchOn,products}=useContextProvider();
+    let data=[]
+    console.log(products)
     const handleChange=(event)=>{
         changeQuery(event.target.value)
+       
     }
-    console.log('re-render')
-    let {data}=useFetch(`/api/products?populate=*&filters[product_name][$contains]=${query}`)
-    if(!query.length)
+    data=products.data.filter(prod=>{
+      return prod.name.toLowerCase().includes(query)
+    })
+    console.log(data)
+      if(!query.length)
     {
         data=null
     }
@@ -32,14 +37,14 @@ export default function Search() {
       </div>
       <div className='search-result-content'>
         <div className="search-results">
-        {data?.data?.map((product)=>
+        {data?.map((product)=>
             <div className="search-result-item">
                 <div className='img-container'>
-                    <img src={process.env.REACT_APP_DEV_URL+product.attributes.img.data.attributes.url}/>
+                    <img src={product.img}/>
                     </div>
                     <div className="text">
-                        <div className="name">{product.attributes.product_name}</div>
-                        <div className="des">{product.attributes.description}</div>
+                        <div className="name">{product.name}</div>
+                        <div className="des">{product.des}</div>
                     
                 </div>
             </div>

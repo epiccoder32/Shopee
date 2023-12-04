@@ -36,7 +36,7 @@ const AppContext=({children})=>{
     useEffect(()=>{
         let Subtotal=0;
         cartItems.map((product)=>{
-            Subtotal+=product?.attributes?.price*product?.attributes?.quantity;
+            Subtotal+=product?.price*product?.quantity;
         })
         setCartcount(Subtotal);
     },[cartItems])
@@ -47,11 +47,11 @@ const AppContext=({children})=>{
             console.log(index)
             if(index!=-1)
             {   
-                pitems[index].attributes.quantity=count;
+                pitems[index].quantity=count;
                 
             }
             else{ 
-            item.attributes.quantity=count;
+            item.quantity=count;
             pitems=[...pitems,item]
         };
         setCartitems(pitems)
@@ -70,17 +70,18 @@ const AppContext=({children})=>{
         const index=pitems.findIndex(p=>p?.id==item?.id);
         if(type=='inc')
         {
-            pitems[index].attributes.quantity +=1
+            pitems[index].quantity +=1
         }
         else
         {
-            if( pitems[index]?.attributes?.quantity>1)
+            if( pitems[index]?.quantity>1)
             {
-                pitems[index].attributes.quantity -=1
+                pitems[index].quantity -=1
             }
             
         }
         setCartitems(pitems)
+        console.log(cartItems)
 
     }
 

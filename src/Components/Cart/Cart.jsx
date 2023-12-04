@@ -56,10 +56,10 @@ export default function Cart({setCart}) {
         
         {cartItems?.map(product=>{
             return <Cartitem 
-            picture={product.attributes.img.data.attributes.url}
-            name={product.attributes.product_name}
-            price={product.attributes.price}
-            count={product.attributes.quantity}
+            picture={product.img}
+            name={product.name}
+            price={product.price}
+            count={product.quantity}
             product={product}
             /> 
         })
